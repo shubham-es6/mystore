@@ -1,7 +1,12 @@
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+
 const App = () => {
   return (
-    <div>
-      <h1>MY Store</h1>
+    <div className="flex min-h-screen flex-col bg-slate-200">
+      <Header />
+      <div className="grow"></div>
+      <Footer />
     </div>
   );
 };

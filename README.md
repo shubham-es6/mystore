@@ -26,14 +26,40 @@ mystore/
 │   │   ├── favicon.svg
 │   │   └── icons.svg
 │   ├── src/
+│   │   ├── components/
+│   │   │   ├── Footer/
+│   │   │   │   └── index.jsx
+│   │   │   └── Header/
+│   │   │       ├── DesktopMenu.jsx
+│   │   │       ├── index.jsx
+│   │   │       ├── Logo.jsx
+│   │   │       ├── MenuItem.jsx
+│   │   │       ├── MenuItemMobile.jsx
+│   │   │       ├── MobileMenu.jsx
+│   │   │       ├── MobileMenuIcon.jsx
+│   │   │       ├── MobileSearchBar.jsx
+│   │   │       └── SearchBar.jsx
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
 │   ├── eslint.config.js
 │   ├── index.html
-│   ├── package.json
+│   ├── jsconfig.json
 │   ├── package-lock.json
+│   ├── package.json
 │   └── vite.config.js
 │
 ├── .gitignore
 └── README.md
+
+## 🔄 Recent Changes
+
+### Step 3 — Completed
+
+- Added `@components` alias in `jsconfig.json` and `vite.config.js`
+- Added Header component with `DesktopMenu`, `Logo`, `MenuItem`, `MenuItemMobile`, `MobileMenu`, `MobileMenuIcon`, `MobileSearchBar`, and `SearchBar`
+- Added Footer component
+- Updated `App.jsx` to include Header and Footer components
+
+
+```
