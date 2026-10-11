@@ -1,4 +1,4 @@
-import { Tag, User, ShoppingBag, TagIcon } from "lucide-react";
+import { TagIcon, User, ShoppingBag } from "lucide-react";
 
 import MenuItem from "./MenuItem";
 
