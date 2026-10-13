@@ -2,9 +2,25 @@ import CategoryImageBox from "./CategoryImageBox";
 
 const AllCategoriesMenuDisplay = () => {
   return (
-    <section className="border-t border-slate-300">
-      <div className="relative z-50 mx-auto hidden max-w-7xl gap-10 bg-white px-3 py-8 sm:px-4 lg:flex">
-        <div className="grid w-full grid-cols-12 gap-8">
+    <section className="border-t border-slate-200/80 bg-white shadow-xl">
+      <div className="relative z-50 mx-auto hidden max-w-7xl px-4 py-8 sm:px-6 lg:block lg:px-8">
+        {/* Department Overview Header */}
+        <div className="mb-6 flex items-center justify-between border-b border-slate-100 pb-4">
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              All Categories
+            </h3>
+            <p className="mt-0.5 text-xs text-slate-500">
+              Explore our complete catalog of apparel, footwear, and seasonal collections
+            </p>
+          </div>
+          <span className="text-xs font-medium text-slate-400">
+            8 Departments
+          </span>
+        </div>
+
+        {/* Categories Grid */}
+        <div className="grid w-full grid-cols-12 gap-6">
           <div className="col-span-3">
             <CategoryImageBox
               url="#"

@@ -3,13 +3,15 @@ import LinkItem from "./LinkItem";
 
 const MenMenuDisplay = () => {
   return (
-    <section className="border-t border-slate-300">
-      <div className="relative z-50 mx-auto hidden max-w-7xl gap-10 bg-white px-3 py-8 sm:px-4 lg:flex">
-        <div className="grid w-full grid-cols-12 gap-8">
+    <section className="border-t border-slate-200 bg-white">
+      <div className="relative z-50 mx-auto hidden max-w-7xl px-4 py-8 lg:block">
+        <div className="grid w-full grid-cols-12 items-start gap-6">
+          {/* Categories */}
           <div className="col-span-2">
-            <h6 className="mb-6 text-sm font-semibold text-slate-900">
+            <h6 className="mb-5 text-xs font-bold uppercase tracking-wider text-slate-900">
               Categories
             </h6>
+
             <ul className="flex flex-col gap-y-3">
               <LinkItem url="#" label="Men's Fashion" />
               <LinkItem url="#" label="New Arrivals" />
@@ -22,10 +24,12 @@ const MenMenuDisplay = () => {
             </ul>
           </div>
 
+          {/* Top Brands */}
           <div className="col-span-2">
-            <h6 className="mb-6 text-sm font-semibold text-slate-900">
+            <h6 className="mb-5 text-xs font-bold uppercase tracking-wider text-slate-900">
               Top Brands
             </h6>
+
             <ul className="flex flex-col gap-y-3">
               <LinkItem url="#" label="Nike" />
               <LinkItem url="#" label="Adidas" />
@@ -38,19 +42,23 @@ const MenMenuDisplay = () => {
             </ul>
           </div>
 
-          <div className="col-span-5">
+          {/* Men's Watches */}
+          <div className="col-span-5 h-[320px] min-w-0">
             <CategoryImageBox
               url="#"
               imageUrl="/images/men-watches-category.jpg"
               label="Men's Watches"
+              fullHeight={true}
             />
           </div>
 
-          <div className="col-span-3">
+          {/* Men's Suits */}
+          <div className="col-span-3 h-[320px] min-w-0">
             <CategoryImageBox
               url="#"
               imageUrl="/images/mens-suit-category.jpg"
               label="Men's Suits"
+              fullHeight={true}
             />
           </div>
         </div>

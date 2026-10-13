@@ -3,10 +3,24 @@ import { useState, useRef, useEffect } from "react";
 import AllCategoriesMenuDisplay from "./AllCategoriesMenuDisplay";
 import MegaMenuItem from "./MegaMenuItem";
 import MenMenuDisplay from "./MenMenuDisplay";
+import WomenMenuDisplay from "./WomenMenuDisplay";
+import KidsMenuDisplay from "./KidsMenuDisplay";
+import CollectionsMenuDisplay from "./CollectionsMenuDisplay";
+import WatchesMenuDisplay from "./WatchesMenuDisplay";
+import ShoesMenuDisplay from "./ShoesMenuDisplay";
+import AccessoriesMenuDisplay from "./AccessoriesMenuDisplay";
+import SaleMenuDisplay from "./SaleMenuDisplay";
 
 const menuComponents = {
   "All Categories": AllCategoriesMenuDisplay,
   Men: MenMenuDisplay,
+  Women: WomenMenuDisplay,
+  Kids: KidsMenuDisplay,
+  Collections: CollectionsMenuDisplay,
+  Watches: WatchesMenuDisplay,
+  Shoes: ShoesMenuDisplay,
+  Accessories: AccessoriesMenuDisplay,
+  Sale: SaleMenuDisplay,
 };
 
 const MegaMenu = () => {
@@ -31,10 +45,10 @@ const MegaMenu = () => {
   }, []);
 
   return (
-    <>
+    <div ref={menuRef} className="relative w-full border-b border-slate-200/80 bg-white">
       <nav
         aria-label="Main navigation"
-        className="relative z-40 mx-auto hidden w-full max-w-7xl items-center gap-6 bg-white px-4 py-3 lg:flex"
+        className="relative z-40 mx-auto hidden w-full max-w-7xl items-center justify-center gap-1 px-4 py-2 bg-white lg:flex xl:gap-2"
       >
         <MegaMenuItem
           currentMenu={currentMenu}
@@ -83,10 +97,10 @@ const MegaMenu = () => {
         />
       </nav>
 
-      <div ref={menuRef}>
+      <div className="relative w-full transition-all duration-200">
         {CurrentMenuComponent && <CurrentMenuComponent />}
       </div>
-    </>
+    </div>
   );
 };
 
