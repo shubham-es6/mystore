@@ -5,7 +5,7 @@ A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 ## 🚀 Tech Stack
 
 - React.js
-- JavaScript
+- JavaScript (ES6+)
 - Vite
 - Tailwind CSS
 - ESLint
@@ -23,6 +23,17 @@ A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 mystore/
 ├── client/
 │   ├── public/
+│   │   ├── images/
+│   │   │   ├── accessories-bags.jpg
+│   │   │   ├── accessories-sunglasses.jpg
+│   │   │   ├── collections-bestsellers.jpg
+│   │   │   ├── collections-new-arrivals.jpg
+│   │   │   ├── kids-boys.jpg
+│   │   │   ├── kids-girls.jpg
+│   │   │   ├── shoes-sneakers.jpg
+│   │   │   ├── shoes-sports.jpg
+│   │   │   ├── women-dresses-category.jpg
+│   │   │   └── women-handbags-category.jpg
 │   │   ├── favicon.svg
 │   │   └── icons.svg
 │   ├── src/
@@ -30,6 +41,20 @@ mystore/
 │   │   │   ├── Footer/
 │   │   │   │   └── index.jsx
 │   │   │   └── Header/
+│   │   │       ├── MegaMenu/
+│   │   │       │   ├── AccessoriesMenuDisplay.jsx
+│   │   │       │   ├── AllCategoriesMenuDisplay.jsx
+│   │   │       │   ├── CategoryImageBox.jsx
+│   │   │       │   ├── CollectionsMenuDisplay.jsx
+│   │   │       │   ├── KidsMenuDisplay.jsx
+│   │   │       │   ├── LinkItem.jsx
+│   │   │       │   ├── MegaMenuItem.jsx
+│   │   │       │   ├── MenMenuDisplay.jsx
+│   │   │       │   ├── SaleMenuDisplay.jsx
+│   │   │       │   ├── ShoesMenuDisplay.jsx
+│   │   │       │   ├── WatchesMenuDisplay.jsx
+│   │   │       │   ├── WomenMenuDisplay.jsx
+│   │   │       │   └── index.jsx
 │   │   │       ├── DesktopMenu.jsx
 │   │   │       ├── index.jsx
 │   │   │       ├── Logo.jsx
@@ -43,7 +68,6 @@ mystore/
 │   │   ├── index.css
 │   │   └── main.jsx
 │   ├── eslint.config.js
-│   ├── index.html
 │   ├── jsconfig.json
 │   ├── package-lock.json
 │   ├── package.json
@@ -56,10 +80,27 @@ mystore/
 
 ### Step 3 — Completed
 
-- Added `@components` alias in `jsconfig.json` and `vite.config.js`
-- Added Header component with `DesktopMenu`, `Logo`, `MenuItem`, `MenuItemMobile`, `MobileMenu`, `MobileMenuIcon`, `MobileSearchBar`, and `SearchBar`
-- Added Footer component
-- Updated `App.jsx` to include Header and Footer components
+- Added the `@components` alias in `jsconfig.json` and `vite.config.js`.
+- Created reusable Header components:
+  - `DesktopMenu`
+  - `Logo`
+  - `MenuItem`
+  - `MenuItemMobile`
+  - `MobileMenu`
+  - `MobileMenuIcon`
+  - `MobileSearchBar`
+  - `SearchBar`
+- Added the Footer component.
+- Updated `App.jsx` to include Header and Footer components.
 
+### Step 4 — Completed
 
-```
+- Created reusable Mega Menu components.
+- Added category navigation for Men, Women, Kids, Shoes, Watches, Accessories, Collections, and Sale.
+- Created `CategoryImageBox` for promotional category images.
+- Created `LinkItem` for reusable navigation links.
+- Added category-specific promotional images.
+- Improved Mega Menu layout using Tailwind CSS.
+- Organized Mega Menu components into a dedicated folder.
+- Updated navigation styling for a consistent user interface.
+
