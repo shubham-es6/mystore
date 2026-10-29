@@ -45,7 +45,10 @@ const MegaMenu = () => {
   }, []);
 
   return (
-    <div ref={menuRef} className="relative w-full border-b border-slate-200/80 bg-white">
+    <div
+      ref={menuRef}
+      className="relative w-full border-b border-slate-200/80 bg-white"
+    >
       <nav
         aria-label="Main navigation"
         className="relative z-40 mx-auto hidden w-full max-w-7xl items-center justify-center gap-1 px-4 py-2 bg-white lg:flex xl:gap-2"
