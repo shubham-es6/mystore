@@ -1,7 +1,9 @@
+import { Link } from "react-router";
+
 const MenuItem = ({ url, label, icon: Icon }) => {
   return (
-    <a
-      href={url}
+    <Link
+      to={url}
       className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition-all duration-200 hover:bg-slate-100 hover:text-indigo-600"
     >
       <Icon
@@ -9,7 +11,7 @@ const MenuItem = ({ url, label, icon: Icon }) => {
         strokeWidth={2}
       />
       <span>{label}</span>
-    </a>
+    </Link>
   );
 };
 

@@ -1,20 +1,25 @@
-import Header from "@components/Header";
-import Footer from "@components/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router";
+
+import Layout from "@components/Layout";
 import HomeScreen from "@screens/Home";
+import ErrorScreen from "@screens/Error";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorScreen />,
+    children: [
+      {
+        index: true,
+        element: <HomeScreen />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
-  return (
-    <div className="flex min-h-screen flex-col bg-slate-200">
-      <Header />
-
-      <div className="h-[57px] lg:h-[97px]"></div>
-
-      <div className="grow">
-        <HomeScreen />
-      </div>
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

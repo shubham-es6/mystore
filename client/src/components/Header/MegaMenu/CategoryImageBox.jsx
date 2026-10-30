@@ -1,7 +1,9 @@
+import { Link } from "react-router";
+
 const CategoryImageBox = ({ url, imageUrl, label, fullHeight = false }) => {
   return (
-    <a
-      href={url}
+    <Link
+      to={url}
       className={`group relative block w-full overflow-hidden rounded-xl bg-slate-100 shadow-sm ring-1 ring-slate-900/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 ${
         fullHeight ? "h-full" : ""
       }`}
@@ -40,7 +42,7 @@ const CategoryImageBox = ({ url, imageUrl, label, fullHeight = false }) => {
           </svg>
         </span>
       </div>
-    </a>
+    </Link>
   );
 };
 

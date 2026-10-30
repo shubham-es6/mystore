@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const SaleMenuDisplay = () => {
   return (
     <section className="border-t border-slate-200 bg-white shadow-xl">
@@ -25,13 +27,13 @@ const SaleMenuDisplay = () => {
                 more. Find your favourites at special prices.
               </p>
 
-              <a
-                href="/sale"
+              <Link
+                to="/sale"
                 className="mt-6 inline-flex items-center gap-2 rounded-lg bg-rose-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-rose-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 focus-visible:ring-offset-2"
               >
                 Shop Sale
                 <span aria-hidden="true">→</span>
-              </a>
+              </Link>
             </div>
 
             {/* Discount Highlight */}
@@ -55,8 +57,8 @@ const SaleMenuDisplay = () => {
 
         {/* Category Links */}
         <div className="mt-5 grid grid-cols-3 gap-4">
-          <a
-            href="/sale/men"
+          <Link
+            to="/sale/men"
             className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition duration-300 hover:border-rose-200 hover:bg-rose-50"
           >
             <div>
@@ -69,10 +71,10 @@ const SaleMenuDisplay = () => {
             <span className="text-lg text-slate-400 transition group-hover:translate-x-1 group-hover:text-rose-600">
               →
             </span>
-          </a>
+          </Link>
 
-          <a
-            href="/sale/women"
+          <Link
+            to="/sale/women"
             className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition duration-300 hover:border-rose-200 hover:bg-rose-50"
           >
             <div>
@@ -85,10 +87,10 @@ const SaleMenuDisplay = () => {
             <span className="text-lg text-slate-400 transition group-hover:translate-x-1 group-hover:text-rose-600">
               →
             </span>
-          </a>
+          </Link>
 
-          <a
-            href="/sale/kids"
+          <Link
+            to="/sale/kids"
             className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition duration-300 hover:border-rose-200 hover:bg-rose-50"
           >
             <div>
@@ -101,7 +103,7 @@ const SaleMenuDisplay = () => {
             <span className="text-lg text-slate-400 transition group-hover:translate-x-1 group-hover:text-rose-600">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
