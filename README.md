@@ -1,4 +1,4 @@
-# MYStore
+# MYStore 🛍️
 
 A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 
@@ -8,6 +8,7 @@ A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 - JavaScript (ES6+)
 - Vite
 - Tailwind CSS
+- React Router
 - ESLint
 
 ## ⚙️ Development Setup
@@ -20,18 +21,37 @@ A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 
 ## ✨ Features
 
+### Navigation & Layout
 - Home page for displaying products
 - Reusable Header and Footer components
 - Desktop and mobile navigation components
 - Mega Menu with multiple shopping categories
 - Category-specific promotional images
+- Responsive navigation layout
+
+### Product Features
 - Reusable ProductCard component
 - Product image component
 - Product rating component
 - Product data maintained in a separate file
-- Organized components, data, and screens
+- Product Details screen
+- Product information display
+- Product quantity selector
+- Quantity increment (+) functionality
+- Quantity decrement (-) functionality
+
+### Routing & Application
+- React Router integration
+- Client-side navigation and routing
+- Product details navigation
+- Custom 404 Error Page for undefined routes
+- Reusable Layout components
+
+### UI & Configuration
 - Tailwind CSS styling
 - Custom favicon and SVG icons
+- Organized components, data, layouts, and screens
+- Configured import aliases
 
 ## 📁 Project Structure
 
@@ -63,32 +83,38 @@ mystore/
 │   │   │   │   │   ├── AllCategoriesMenuDisplay.jsx
 │   │   │   │   │   ├── CategoryImageBox.jsx
 │   │   │   │   │   ├── CollectionsMenuDisplay.jsx
-│   │   │   │   │   ├── KidsMenuDisplay.jsx
-│   │   │   │   │   ├── LinkItem.jsx
-│   │   │   │   │   ├── MegaMenuItem.jsx
-│   │   │   │   │   ├── MenMenuDisplay.jsx
-│   │   │   │   │   ├── SaleMenuDisplay.jsx
-│   │   │   │   │   ├── ShoesMenuDisplay.jsx
-│   │   │   │   │   ├── WatchesMenuDisplay.jsx
-│   │   │   │   │   ├── WomenMenuDisplay.jsx
-│   │   │   │   │   └── index.jsx
-│   │   │   │   ├── DesktopMenu.jsx
-│   │   │   │   ├── Logo.jsx
-│   │   │   │   ├── MenuItem.jsx
-│   │   │   │   ├── MenuItemMobile.jsx
-│   │   │   │   ├── MobileMenu.jsx
-│   │   │   │   ├── MobileMenuIcon.jsx
-│   │   │   │   ├── MobileSearchBar.jsx
-│   │   │   │   ├── SearchBar.jsx
+│   │   │   │   ├── KidsMenuDisplay.jsx
+│   │   │   │   ├── LinkItem.jsx
+│   │   │   │   ├── MegaMenuItem.jsx
+│   │   │   │   ├── MenMenuDisplay.jsx
+│   │   │   │   ├── SaleMenuDisplay.jsx
+│   │   │   │   ├── ShoesMenuDisplay.jsx
+│   │   │   │   ├── WatchesMenuDisplay.jsx
+│   │   │   │   ├── WomenMenuDisplay.jsx
 │   │   │   │   └── index.jsx
-│   │   │   ├── ProductCard/
-│   │   │   │   ├── CardImage.jsx
-│   │   │   │   ├── Rating.jsx
-│   │   │   │   └── index.jsx
+│   │   │   ├── DesktopMenu.jsx
+│   │   │   ├── Logo.jsx
+│   │   │   ├── MenuItem.jsx
+│   │   │   ├── MenuItemMobile.jsx
+│   │   │   ├── MobileMenu.jsx
+│   │   │   ├── MobileMenuIcon.jsx
+│   │   │   ├── MobileSearchBar.jsx
+│   │   │   ├── SearchBar.jsx
+│   │   │   └── index.jsx
+│   │   ├── Layout/
+│   │   │   └── (Layout components)
+│   │   ├── ProductCard/
+│   │   │   ├── CardImage.jsx
+│   │   │   ├── Rating.jsx
+│   │   │   └── index.jsx
 │   │   ├── data/
 │   │   │   └── products.js
 │   │   ├── screens/
-│   │   │   └── Home/
+│   │   │   ├── Error/
+│   │   │   │   └── (404 Error Page)
+│   │   │   ├── Home/
+│   │   │   │   └── index.jsx
+│   │   │   └── ProductDetails/
 │   │   │       └── index.jsx
 │   │   ├── App.jsx
 │   │   ├── index.css
@@ -100,6 +126,7 @@ mystore/
 │   └── vite.config.js
 ├── .gitignore
 └── README.md
+
 ```
 
 ## 🔄 Recent Changes
@@ -144,6 +171,29 @@ mystore/
 - Updated `App.jsx` for the application structure.
 - Updated project configuration and dependencies as required.
 
+### Step 6 — Completed
+
+- Updated React Router dependency to the latest project version.
+- Configured application routing in `App.jsx`.
+- Implemented client-side navigation.
+- Created a custom 404 Error Page.
+- Added Error screen components in `src/screens/Error/`.
+- Created reusable Layout components in `src/components/Layout/`.
+- Updated Header navigation components for routing integration.
+- Updated ProductCard navigation.
+- Improved application navigation and route handling.
+
+### Step 7 — Completed
+
+- Created a Product Details screen.
+- Implemented product details page navigation.
+- Added product information display.
+- Added product quantity selector.
+- Implemented quantity increment (+) functionality.
+- Implemented quantity decrement (-) functionality.
+- Improved Product Details page UI using Tailwind CSS.
+- Organized Product Details screen components for better maintainability.
+
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
@@ -159,11 +209,48 @@ mystore/
 4. Start the development server.
 
 ```bash
-cd client
+git clone https://github.com/shubham-es6/mystore.git
+cd mystore/client
 npm install
 npm run dev
 ```
 
+Open the local URL shown in your terminal to view the application.
+
 ## 📌 Project Status
 
-MYStore is under active development. The Home page, reusable UI components, Mega Menu, product cards, and product rating component have been added. More e-commerce functionality will be developed in upcoming steps.
+MYStore is under active development.
+
+### Completed
+
+- Home Page
+- Reusable Header and Footer
+- Desktop and Mobile Navigation
+- Mega Menu with Shopping Categories
+- Reusable Product Cards
+- Product Rating Component
+- React Router Integration
+- Custom 404 Error Page
+- Product Details Screen
+- Product Quantity Selector
+- Quantity Increment and Decrement Functionality
+
+### Upcoming Features
+
+- Add to Cart functionality
+- Shopping Cart Page
+- Remove Products from Cart
+- Wishlist functionality
+- User Authentication
+- Product Search
+- Product Filtering and Sorting
+- Backend API Integration
+- Checkout Page
+- Payment Gateway Integration
+- Order Management
+
+More e-commerce features will be developed in upcoming steps.
+
+---
+
+**Developed with ❤️ using React.js and Tailwind CSS.**
