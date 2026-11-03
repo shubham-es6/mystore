@@ -1,15 +1,21 @@
 # MYStore 🛍️
 
-A modern e-commerce web application built with React, Vite, and Tailwind CSS.
+A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.js, and Express.js.
 
 ## 🚀 Tech Stack
 
+### Frontend
 - React.js
 - JavaScript (ES6+)
 - Vite
 - Tailwind CSS
 - React Router
 - ESLint
+
+### Backend
+- Node.js
+- Express.js
+- npm
 
 ## ⚙️ Development Setup
 
@@ -18,6 +24,9 @@ A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 - Tailwind CSS configured with Vite
 - Custom MYStore favicon and page title
 - Configured import aliases using `jsconfig.json` and `vite.config.js`
+- Initialized Node.js backend using `npm init`
+- Installed Express.js
+- Created backend entry point: `server/main.js`
 
 ## ✨ Features
 
@@ -57,6 +66,12 @@ A modern e-commerce web application built with React, Vite, and Tailwind CSS.
 
 ```text
 mystore/
+│
+├── server/
+│   ├── main.js
+│   └── data/
+│       └── products.js
+│
 ├── client/
 │   ├── public/
 │   │   ├── images/
@@ -73,60 +88,48 @@ mystore/
 │   │   │   └── category images
 │   │   ├── favicon.svg
 │   │   └── icons.svg
+│   │
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Footer/
-│   │   │   │   └── index.jsx
 │   │   │   ├── Header/
 │   │   │   │   ├── MegaMenu/
-│   │   │   │   │   ├── AccessoriesMenuDisplay.jsx
-│   │   │   │   │   ├── AllCategoriesMenuDisplay.jsx
-│   │   │   │   │   ├── CategoryImageBox.jsx
-│   │   │   │   │   ├── CollectionsMenuDisplay.jsx
-│   │   │   │   ├── KidsMenuDisplay.jsx
-│   │   │   │   ├── LinkItem.jsx
-│   │   │   │   ├── MegaMenuItem.jsx
-│   │   │   │   ├── MenMenuDisplay.jsx
-│   │   │   │   ├── SaleMenuDisplay.jsx
-│   │   │   │   ├── ShoesMenuDisplay.jsx
-│   │   │   │   ├── WatchesMenuDisplay.jsx
-│   │   │   │   ├── WomenMenuDisplay.jsx
+│   │   │   │   ├── DesktopMenu.jsx
+│   │   │   │   ├── Logo.jsx
+│   │   │   │   ├── MenuItem.jsx
+│   │   │   │   ├── MenuItemMobile.jsx
+│   │   │   │   ├── MobileMenu.jsx
+│   │   │   │   ├── MobileMenuIcon.jsx
+│   │   │   │   ├── MobileSearchBar.jsx
+│   │   │   │   ├── SearchBar.jsx
 │   │   │   │   └── index.jsx
-│   │   │   ├── DesktopMenu.jsx
-│   │   │   ├── Logo.jsx
-│   │   │   ├── MenuItem.jsx
-│   │   │   ├── MenuItemMobile.jsx
-│   │   │   ├── MobileMenu.jsx
-│   │   │   ├── MobileMenuIcon.jsx
-│   │   │   ├── MobileSearchBar.jsx
-│   │   │   ├── SearchBar.jsx
-│   │   │   └── index.jsx
-│   │   ├── Layout/
-│   │   │   └── (Layout components)
-│   │   ├── ProductCard/
-│   │   │   ├── CardImage.jsx
-│   │   │   ├── Rating.jsx
-│   │   │   └── index.jsx
+│   │   │   ├── Layout/
+│   │   │   └── ProductCard/
+│   │   │       ├── CardImage.jsx
+│   │   │       ├── Rating.jsx
+│   │   │       └── index.jsx
+│   │   │
 │   │   ├── data/
-│   │   │   └── products.js
 │   │   ├── screens/
 │   │   │   ├── Error/
-│   │   │   │   └── (404 Error Page)
 │   │   │   ├── Home/
-│   │   │   │   └── index.jsx
 │   │   │   └── ProductDetails/
-│   │   │       └── index.jsx
+│   │   │
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
+│   │
 │   ├── eslint.config.js
 │   ├── jsconfig.json
 │   ├── package-lock.json
 │   ├── package.json
+│   ├── index.html
 │   └── vite.config.js
+│
 ├── .gitignore
+├── package.json
+├── package-lock.json
 └── README.md
-
 ```
 
 ## 🔄 Recent Changes
@@ -194,23 +197,43 @@ mystore/
 - Improved Product Details page UI using Tailwind CSS.
 - Organized Product Details screen components for better maintainability.
 
+### Step 8 — Backend Setup (Completed)
+
+- Initialized Node.js backend using `npm init`.
+- Generated `package.json` and `package-lock.json`.
+- Installed Express.js.
+- Created the `server` directory.
+- Created `server/main.js` as the backend entry point.
+- Created `server/data` directory.
+- Moved `products.js` from frontend data to `server/data/products.js`.
+- Started separating frontend and backend responsibilities.
+- Organized the initial backend project structure.
+
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
 
 - Node.js
 - npm
+- Git
 
-### Installation
-
-1. Clone the repository.
-2. Navigate to the client directory.
-3. Install the dependencies.
-4. Start the development server.
+### Clone Repository
 
 ```bash
 git clone https://github.com/shubham-es6/mystore.git
-cd mystore/client
+cd mystore
+```
+
+### Backend Setup
+
+```bash
+npm install
+```
+
+### Frontend Setup
+
+```bash
+cd client
 npm install
 npm run dev
 ```
@@ -234,9 +257,12 @@ MYStore is under active development.
 - Product Details Screen
 - Product Quantity Selector
 - Quantity Increment and Decrement Functionality
+- Initial Express.js Backend Setup
+- Product Data Migration to Backend
 
 ### Upcoming Features
 
+- Express Product API
 - Add to Cart functionality
 - Shopping Cart Page
 - Remove Products from Cart
@@ -245,6 +271,7 @@ MYStore is under active development.
 - Product Search
 - Product Filtering and Sorting
 - Backend API Integration
+- MongoDB Database Integration
 - Checkout Page
 - Payment Gateway Integration
 - Order Management
@@ -253,4 +280,4 @@ More e-commerce features will be developed in upcoming steps.
 
 ---
 
-**Developed with ❤️ using React.js and Tailwind CSS.**
+**Developed with ❤️ using React.js, Tailwind CSS, Node.js and Express.js.**

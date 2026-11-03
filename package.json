@@ -1,0 +1,23 @@
+{
+  "name": "mystore",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/shubham-es6/mystore#readme",
+  "bugs": {
+    "url": "https://github.com/shubham-es6/mystore/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubham-es6/mystore.git"
+  },
+  "license": "UNLICENCED",
+  "author": "Shubham Yadav",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
