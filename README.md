@@ -5,6 +5,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 ## 🚀 Tech Stack
 
 ### Frontend
+
 - React.js
 - JavaScript (ES6+)
 - Vite
@@ -13,6 +14,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - ESLint
 
 ### Backend
+
 - Node.js
 - Express.js
 - npm
@@ -31,6 +33,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 ## ✨ Features
 
 ### Navigation & Layout
+
 - Home page for displaying products
 - Reusable Header and Footer components
 - Desktop and mobile navigation components
@@ -39,6 +42,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Responsive navigation layout
 
 ### Product Features
+
 - Reusable ProductCard component
 - Product image component
 - Product rating component
@@ -50,6 +54,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Quantity decrement (-) functionality
 
 ### Routing & Application
+
 - React Router integration
 - Client-side navigation and routing
 - Product details navigation
@@ -57,6 +62,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Reusable Layout components
 
 ### UI & Configuration
+
 - Tailwind CSS styling
 - Custom favicon and SVG icons
 - Organized components, data, layouts, and screens
@@ -208,6 +214,24 @@ mystore/
 - Moved `products.js` from frontend data to `server/data/products.js`.
 - Started separating frontend and backend responsibilities.
 - Organized the initial backend project structure.
+
+### Step 12: Axios Integration & Frontend-Backend Connection
+
+- Installed Axios in the client for making HTTP requests.
+- Configured proxy settings in `vite.config.js` to connect the frontend with the backend.
+- Updated frontend screens to fetch product data from backend API endpoints.
+- Integrated frontend components with backend APIs.
+- Implemented dynamic data fetching instead of using static product data.
+- Improved communication between the React frontend and Express backend.
+
+### Step 14: Configure Absolute Path Imports
+
+- Installed `@babel/preset-env` as a development dependency.
+- Created `.babelrc` configuration file.
+- Added `jsconfig.json` to configure absolute path support.
+- Added the `"imports"` property in `package.json`.
+- Updated import statements in the main application file.
+- Improved project structure and simplified module imports.
 
 ## 🛠️ Installation and Setup
 
