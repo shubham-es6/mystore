@@ -274,6 +274,20 @@ mystore/
 - Updated `jsconfig.json` and `package.json`.
 - Improved backend code organization and maintainability.
 
+### Step 16 - Logging
+
+- Integrated Morgan middleware for HTTP request logging.
+- Configured request logging to monitor incoming HTTP requests.
+- Improved backend debugging and request tracking.
+
+
+### Step 17 Backend Updates
+- Installed bcryptjs for password hashing.
+- Removed hardcoded IDs from product objects in products.js.
+- Added dummy user data in users.js for development and testing.
+
+
+
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
