@@ -1,6 +1,6 @@
 # MYStore 🛍️
 
-A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.js, and Express.js.
+A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.js, Express.js, and MongoDB.
 
 ## 🚀 Tech Stack
 
@@ -11,12 +11,15 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Vite
 - Tailwind CSS
 - React Router
+- Axios
 - ESLint
 
 ### Backend
 
 - Node.js
 - Express.js
+- MongoDB
+- Mongoose
 - npm
 
 ## ⚙️ Development Setup
@@ -29,6 +32,10 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Initialized Node.js backend using `npm init`
 - Installed Express.js
 - Created backend entry point: `server/main.js`
+- Configured frontend-backend communication using Axios
+- Configured Vite proxy for backend API requests
+- Organized backend configuration, data, and models
+- Created separate Mongoose models for users, products, and orders
 
 ## ✨ Features
 
@@ -61,12 +68,22 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Custom 404 Error Page for undefined routes
 - Reusable Layout components
 
+### Backend Features
+
+- Node.js and Express.js backend setup
+- Organized backend configuration
+- Separate product data file
+- Mongoose models for users, products, and orders
+- Database configuration file
+- Organized backend folder structure
+
 ### UI & Configuration
 
 - Tailwind CSS styling
 - Custom favicon and SVG icons
 - Organized components, data, layouts, and screens
 - Configured import aliases
+- Responsive UI for desktop and mobile devices
 
 ## 📁 Project Structure
 
@@ -74,9 +91,18 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 mystore/
 │
 ├── server/
-│   ├── main.js
-│   └── data/
-│       └── products.js
+│   ├── config/
+│   │   └── db.config.js
+│   │
+│   ├── data/
+│   │   └── products.data.js
+│   │
+│   ├── models/
+│   │   ├── order.model.js
+│   │   ├── product.model.js
+│   │   └── user.model.js
+│   │
+│   └── main.js
 │
 ├── client/
 │   ├── public/
@@ -92,6 +118,7 @@ mystore/
 │   │   │   ├── product-9.jpg
 │   │   │   ├── product-10.jpg
 │   │   │   └── category images
+│   │   │
 │   │   ├── favicon.svg
 │   │   └── icons.svg
 │   │
@@ -109,6 +136,7 @@ mystore/
 │   │   │   │   ├── MobileSearchBar.jsx
 │   │   │   │   ├── SearchBar.jsx
 │   │   │   │   └── index.jsx
+│   │   │   │
 │   │   │   ├── Layout/
 │   │   │   └── ProductCard/
 │   │   │       ├── CardImage.jsx
@@ -140,7 +168,7 @@ mystore/
 
 ## 🔄 Recent Changes
 
-### Step 3 — Completed
+### Step 3 — Completed: Import Aliases & Component Setup
 
 - Configured the `@components` import alias in `jsconfig.json` and `vite.config.js`.
 - Created reusable Header components:
@@ -156,7 +184,7 @@ mystore/
 - Integrated Header and Footer components into `App.jsx`.
 - Organized Header components into separate files for better maintainability.
 
-### Step 4 — Completed
+### Step 4 — Completed: Mega Menu
 
 - Created reusable Mega Menu components.
 - Added category navigation for Men, Women, Kids, Shoes, Watches, Accessories, Collections, and Sale.
@@ -168,7 +196,7 @@ mystore/
 - Organized Mega Menu components into a dedicated directory.
 - Updated navigation styling for a consistent user interface.
 
-### Step 5 — Completed
+### Step 5 — Completed: Home Page & Product Cards
 
 - Created the Home page in `src/screens/Home/index.jsx`.
 - Created a reusable `ProductCard` component.
@@ -180,9 +208,9 @@ mystore/
 - Updated `App.jsx` for the application structure.
 - Updated project configuration and dependencies as required.
 
-### Step 6 — Completed
+### Step 6 — Completed: React Router Integration
 
-- Updated React Router dependency to the latest project version.
+- Updated React Router dependency.
 - Configured application routing in `App.jsx`.
 - Implemented client-side navigation.
 - Created a custom 404 Error Page.
@@ -192,7 +220,7 @@ mystore/
 - Updated ProductCard navigation.
 - Improved application navigation and route handling.
 
-### Step 7 — Completed
+### Step 7 — Completed: Product Details Page
 
 - Created a Product Details screen.
 - Implemented product details page navigation.
@@ -203,7 +231,7 @@ mystore/
 - Improved Product Details page UI using Tailwind CSS.
 - Organized Product Details screen components for better maintainability.
 
-### Step 8 — Backend Setup (Completed)
+### Step 8 — Completed: Backend Setup
 
 - Initialized Node.js backend using `npm init`.
 - Generated `package.json` and `package-lock.json`.
@@ -211,11 +239,11 @@ mystore/
 - Created the `server` directory.
 - Created `server/main.js` as the backend entry point.
 - Created `server/data` directory.
-- Moved `products.js` from frontend data to `server/data/products.js`.
+- Moved product data from frontend to `server/data/products.js`.
 - Started separating frontend and backend responsibilities.
 - Organized the initial backend project structure.
 
-### Step 12: Axios Integration & Frontend-Backend Connection
+### Step 12 — Completed: Axios Integration & Frontend-Backend Connection
 
 - Installed Axios in the client for making HTTP requests.
 - Configured proxy settings in `vite.config.js` to connect the frontend with the backend.
@@ -224,14 +252,27 @@ mystore/
 - Implemented dynamic data fetching instead of using static product data.
 - Improved communication between the React frontend and Express backend.
 
-### Step 14: Configure Absolute Path Imports
+### Step 14 — Completed: Configure Absolute Path Imports
 
 - Installed `@babel/preset-env` as a development dependency.
 - Created `.babelrc` configuration file.
 - Added `jsconfig.json` to configure absolute path support.
-- Added the `"imports"` property in `package.json`.
+- Added the `imports` property in `package.json`.
 - Updated import statements in the main application file.
 - Improved project structure and simplified module imports.
+
+### Step 15 — Completed: Backend Configuration & Mongoose Models
+
+- Updated backend project configuration.
+- Renamed `db.js` to `db.config.js` for database configuration.
+- Renamed `products.js` to `products.data.js` for better file organization.
+- Created a dedicated `models` directory inside the server folder.
+- Created `order.model.js` for managing order data.
+- Created `product.model.js` for managing product data.
+- Created `user.model.js` for managing user data.
+- Updated `server/main.js` to support the new backend structure.
+- Updated `jsconfig.json` and `package.json`.
+- Improved backend code organization and maintainability.
 
 ## 🛠️ Installation and Setup
 
@@ -240,6 +281,7 @@ mystore/
 - Node.js
 - npm
 - Git
+- MongoDB
 
 ### Clone Repository
 
@@ -253,6 +295,8 @@ cd mystore
 ```bash
 npm install
 ```
+
+Configure your MongoDB connection string in your environment configuration before starting the backend.
 
 ### Frontend Setup
 
@@ -283,10 +327,17 @@ MYStore is under active development.
 - Quantity Increment and Decrement Functionality
 - Initial Express.js Backend Setup
 - Product Data Migration to Backend
+- Axios Integration
+- Frontend-Backend API Communication
+- Absolute Path Import Configuration
+- Backend Configuration Structure
+- Mongoose User Model
+- Mongoose Product Model
+- Mongoose Order Model
 
 ### Upcoming Features
 
-- Express Product API
+- Complete Express Product API
 - Add to Cart functionality
 - Shopping Cart Page
 - Remove Products from Cart
@@ -294,8 +345,7 @@ MYStore is under active development.
 - User Authentication
 - Product Search
 - Product Filtering and Sorting
-- Backend API Integration
-- MongoDB Database Integration
+- MongoDB Database Connection and Integration
 - Checkout Page
 - Payment Gateway Integration
 - Order Management
@@ -304,4 +354,4 @@ More e-commerce features will be developed in upcoming steps.
 
 ---
 
-**Developed with ❤️ using React.js, Tailwind CSS, Node.js and Express.js.**
+**Developed with ❤️ using React.js, Tailwind CSS, Node.js, Express.js, and MongoDB.**

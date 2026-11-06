@@ -22,7 +22,8 @@
   },
   "imports": {
     "#config/*": "./server/config/*",
-    "#data/*": "./server/data/*"
+    "#data/*": "./server/data/*",
+    "#models/*": "/server/models/*"
   },
   "dependencies": {
     "concurrently": "^10.0.6",
