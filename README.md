@@ -280,13 +280,21 @@ mystore/
 - Configured request logging to monitor incoming HTTP requests.
 - Improved backend debugging and request tracking.
 
-
 ### Step 17 Backend Updates
+
 - Installed bcryptjs for password hashing.
 - Removed hardcoded IDs from product objects in products.js.
 - Added dummy user data in users.js for development and testing.
 
+### Step 18: Database Seeder and Configuration Updates
 
+- Created a database seeder file to populate MongoDB with dummy data.
+- Installed the `colors` package for colored console output.
+- Tested database seeding with the local MongoDB database.
+- Updated scripts in `package.json`.
+- Added the models folder to `jsconfig.json` and configured package imports.
+- Renamed `products.js` to `products.data.js`.
+- Renamed `users.js` to `users.data.js`.
 
 ## 🛠️ Installation and Setup
 
