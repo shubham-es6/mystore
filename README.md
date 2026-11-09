@@ -65,6 +65,9 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - bcryptjs for password hashing
 - Centralized Express error-handling middleware
 - Organized backend folder structure
+- Product controller functions
+- Controller and route integration
+- Separated controller logic from route definitions
 
 ### UI & Configuration
 
@@ -107,48 +110,48 @@ mystore/
 │   │   │   │   │   ├── AllCategoriesMenuDisplay.jsx
 │   │   │   │   │   ├── CategoryImageBox.jsx
 │   │   │   │   │   ├── CollectionsMenuDisplay.jsx
-│   │   │   │   │   ├── KidsMenuDisplay.jsx
+│   │   │   │   ├── KidsMenuDisplay.jsx
 │   │   │   │   ├── LinkItem.jsx
-│   │   │   │   │   ├── MegaMenuItem.jsx
-│   │   │   │   │   ├── MenMenuDisplay.jsx
-│   │   │   │   │   ├── SaleMenuDisplay.jsx
-│   │   │   │   │   ├── ShoesMenuDisplay.jsx
-│   │   │   │   │   ├── WatchesMenuDisplay.jsx
-│   │   │   │   │   ├── WomenMenuDisplay.jsx
-│   │   │   │   │   └── index.jsx
-│   │   │   │   │
-│   │   │   │   ├── DesktopMenu.jsx
-│   │   │   │   ├── Logo.jsx
-│   │   │   │   ├── MenuItem.jsx
-│   │   │   │   ├── MenuItemMobile.jsx
-│   │   │   │   ├── MobileMenu.jsx
-│   │   │   │   ├── MobileMenuIcon.jsx
-│   │   │   │   ├── MobileSearchBar.jsx
-│   │   │   │   ├── SearchBar.jsx
+│   │   │   │   ├── MegaMenuItem.jsx
+│   │   │   │   ├── MenMenuDisplay.jsx
+│   │   │   │   ├── SaleMenuDisplay.jsx
+│   │   │   │   ├── ShoesMenuDisplay.jsx
+│   │   │   │   ├── WatchesMenuDisplay.jsx
+│   │   │   │   ├── WomenMenuDisplay.jsx
 │   │   │   │   └── index.jsx
 │   │   │   │
-│   │   │   ├── Layout/
-│   │   │   │   └── index.jsx
-│   │   │   │
-│   │   │   └── ProductCard/
-│   │   │       ├── CardImage.jsx
-│   │   │       ├── Rating.jsx
-│   │   │       └── index.jsx
+│   │   │   ├── DesktopMenu.jsx
+│   │   │   ├── Logo.jsx
+│   │   │   ├── MenuItem.jsx
+│   │   │   ├── MenuItemMobile.jsx
+│   │   │   ├── MobileMenu.jsx
+│   │   │   ├── MobileMenuIcon.jsx
+│   │   │   ├── MobileSearchBar.jsx
+│   │   │   ├── SearchBar.jsx
+│   │   │   └── index.jsx
 │   │   │
-│   │   ├── data/
-│   │   ├── screens/
-│   │   │   ├── Error/
-│   │   │   │   └── index.jsx
-│   │   │   ├── Home/
-│   │   │   │   └── index.jsx
-│   │   │   └── ProductDetails/
-│   │   │       ├── QuantitySelector.jsx
-│   │   │       └── index.jsx
+│   │   ├── Layout/
+│   │   │   └── index.jsx
 │   │   │
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
+│   │   └── ProductCard/
+│   │       ├── CardImage.jsx
+│   │       ├── Rating.jsx
+│   │       └── index.jsx
 │   │
+│   ├── data/
+│   ├── screens/
+│   │   ├── Error/
+│   │   │   └── index.jsx
+│   │   ├── Home/
+│   │   │   └── index.jsx
+│   │   └── ProductDetails/
+│   │       ├── QuantitySelector.jsx
+│   │       └── index.jsx
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
 │   ├── eslint.config.js
 │   ├── index.html
 │   ├── jsconfig.json
@@ -158,6 +161,9 @@ mystore/
 ├── server/
 │   ├── config/
 │   │   └── db.config.js
+│   │
+│   ├── controllers/
+│   │   └── product.controller.js
 │   │
 │   ├── data/
 │   │   ├── products.data.js
@@ -199,6 +205,10 @@ mystore/
 - Created separate Mongoose models for users, products, and orders
 - Configured MongoDB database connection
 - Added centralized Express error handling
+- Created product controller functions
+- Connected product controllers with product routes
+- Added controllers path alias in `jsconfig.json`
+- Updated `package.json` imports configuration
 
 ## 🔄 Recent Changes
 
@@ -323,6 +333,16 @@ mystore/
 - Updated `package.json` import configuration.
 - Improved backend error handling and maintainability.
 
+### Step 22 — Completed: Product Controller Setup
+
+- Created a new `controllers` folder inside the server directory.
+- Created `product.controller.js` to manage product-related controller functions.
+- Connected product controller functions with the product route file.
+- Added controllers folder path to `jsconfig.json`.
+- Updated `package.json` imports configuration.
+- Separated controller logic from route definitions.
+- Improved backend code organization and maintainability.
+
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
@@ -397,6 +417,9 @@ MYStore is under active development.
 - Database Seeder
 - Morgan HTTP Request Logging
 - Centralized Express Error Handling Middleware
+- Product Controller Setup
+- Controller and Route Integration
+- Controllers Path Alias Configuration
 
 ### Upcoming Features
 
