@@ -20,22 +20,9 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Express.js
 - MongoDB
 - Mongoose
+- Morgan
+- bcryptjs
 - npm
-
-## ⚙️ Development Setup
-
-- Vite development server
-- Development port: `3000`
-- Tailwind CSS configured with Vite
-- Custom MYStore favicon and page title
-- Configured import aliases using `jsconfig.json` and `vite.config.js`
-- Initialized Node.js backend using `npm init`
-- Installed Express.js
-- Created backend entry point: `server/main.js`
-- Configured frontend-backend communication using Axios
-- Configured Vite proxy for backend API requests
-- Organized backend configuration, data, and models
-- Created separate Mongoose models for users, products, and orders
 
 ## ✨ Features
 
@@ -43,7 +30,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 
 - Home page for displaying products
 - Reusable Header and Footer components
-- Desktop and mobile navigation components
+- Desktop and mobile navigation
 - Mega Menu with multiple shopping categories
 - Category-specific promotional images
 - Responsive navigation layout
@@ -53,7 +40,7 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Reusable ProductCard component
 - Product image component
 - Product rating component
-- Product data maintained in a separate file
+- Product data maintained in separate files
 - Product Details screen
 - Product information display
 - Product quantity selector
@@ -65,16 +52,18 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - React Router integration
 - Client-side navigation and routing
 - Product details navigation
-- Custom 404 Error Page for undefined routes
+- Custom 404 Error Page
 - Reusable Layout components
 
 ### Backend Features
 
-- Node.js and Express.js backend setup
-- Organized backend configuration
-- Separate product data file
+- Node.js and Express.js backend
+- MongoDB database configuration
 - Mongoose models for users, products, and orders
-- Database configuration file
+- Database seeder for dummy data
+- Morgan middleware for HTTP request logging
+- bcryptjs for password hashing
+- Centralized Express error-handling middleware
 - Organized backend folder structure
 
 ### UI & Configuration
@@ -90,43 +79,44 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 ```text
 mystore/
 │
-├── server/
-│   ├── config/
-│   │   └── db.config.js
-│   │
-│   ├── data/
-│   │   └── products.data.js
-│   │
-│   ├── models/
-│   │   ├── order.model.js
-│   │   ├── product.model.js
-│   │   └── user.model.js
-│   │
-│   └── main.js
-│
 ├── client/
 │   ├── public/
-│   │   ├── images/
-│   │   │   ├── product-1.jpg
-│   │   │   ├── product-2.jpg
-│   │   │   ├── product-3.jpg
-│   │   │   ├── product-4.jpg
-│   │   │   ├── product-5.jpg
-│   │   │   ├── product-6.jpg
-│   │   │   ├── product-7.jpg
-│   │   │   ├── product-8.jpg
-│   │   │   ├── product-9.jpg
-│   │   │   ├── product-10.jpg
-│   │   │   └── category images
-│   │   │
 │   │   ├── favicon.svg
-│   │   └── icons.svg
+│   │   ├── icons.svg
+│   │   └── images/
+│   │       ├── product-1.jpg
+│   │       ├── product-2.jpg
+│   │       ├── product-3.jpg
+│   │       ├── product-4.jpg
+│   │       ├── product-5.jpg
+│   │       ├── product-6.jpg
+│   │       ├── product-7.jpg
+│   │       ├── product-8.jpg
+│   │       ├── product-9.jpg
+│   │       ├── product-10.jpg
+│   │       └── category images
 │   │
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Footer/
+│   │   │   │   └── index.jsx
+│   │   │   │
 │   │   │   ├── Header/
 │   │   │   │   ├── MegaMenu/
+│   │   │   │   │   ├── AccessoriesMenuDisplay.jsx
+│   │   │   │   │   ├── AllCategoriesMenuDisplay.jsx
+│   │   │   │   │   ├── CategoryImageBox.jsx
+│   │   │   │   │   ├── CollectionsMenuDisplay.jsx
+│   │   │   │   │   ├── KidsMenuDisplay.jsx
+│   │   │   │   ├── LinkItem.jsx
+│   │   │   │   │   ├── MegaMenuItem.jsx
+│   │   │   │   │   ├── MenMenuDisplay.jsx
+│   │   │   │   │   ├── SaleMenuDisplay.jsx
+│   │   │   │   │   ├── ShoesMenuDisplay.jsx
+│   │   │   │   │   ├── WatchesMenuDisplay.jsx
+│   │   │   │   │   ├── WomenMenuDisplay.jsx
+│   │   │   │   │   └── index.jsx
+│   │   │   │   │
 │   │   │   │   ├── DesktopMenu.jsx
 │   │   │   │   ├── Logo.jsx
 │   │   │   │   ├── MenuItem.jsx
@@ -138,6 +128,8 @@ mystore/
 │   │   │   │   └── index.jsx
 │   │   │   │
 │   │   │   ├── Layout/
+│   │   │   │   └── index.jsx
+│   │   │   │
 │   │   │   └── ProductCard/
 │   │   │       ├── CardImage.jsx
 │   │   │       ├── Rating.jsx
@@ -146,90 +138,117 @@ mystore/
 │   │   ├── data/
 │   │   ├── screens/
 │   │   │   ├── Error/
+│   │   │   │   └── index.jsx
 │   │   │   ├── Home/
+│   │   │   │   └── index.jsx
 │   │   │   └── ProductDetails/
+│   │   │       ├── QuantitySelector.jsx
+│   │   │       └── index.jsx
 │   │   │
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
 │   │
 │   ├── eslint.config.js
-│   ├── jsconfig.json
-│   ├── package-lock.json
-│   ├── package.json
 │   ├── index.html
+│   ├── jsconfig.json
+│   ├── package.json
 │   └── vite.config.js
 │
-├── .gitignore
+├── server/
+│   ├── config/
+│   │   └── db.config.js
+│   │
+│   ├── data/
+│   │   ├── products.data.js
+│   │   └── users.data.js
+│   │
+│   ├── middlewares/
+│   │   └── error.middleware.js
+│   │
+│   ├── models/
+│   │   ├── order.model.js
+│   │   ├── product.model.js
+│   │   └── user.model.js
+│   │
+│   ├── routes/
+│   │   └── product.route.js
+│   │
+│   ├── main.js
+│   └── seeder.js
+│
+├── jsconfig.json
 ├── package.json
 ├── package-lock.json
 └── README.md
 ```
 
+## ⚙️ Development Setup
+
+- Vite development server
+- Development port: `3000`
+- Tailwind CSS configured with Vite
+- Custom MYStore favicon and page title
+- Configured import aliases using `jsconfig.json` and `vite.config.js`
+- Initialized Node.js backend using npm
+- Installed Express.js
+- Created backend entry point: `server/main.js`
+- Configured frontend-backend communication using Axios
+- Configured Vite proxy for backend API requests
+- Organized backend configuration, data, models, routes, and middlewares
+- Created separate Mongoose models for users, products, and orders
+- Configured MongoDB database connection
+- Added centralized Express error handling
+
 ## 🔄 Recent Changes
 
 ### Step 3 — Completed: Import Aliases & Component Setup
 
-- Configured the `@components` import alias in `jsconfig.json` and `vite.config.js`.
-- Created reusable Header components:
-  - `DesktopMenu`
-  - `Logo`
-  - `MenuItem`
-  - `MenuItemMobile`
-  - `MobileMenu`
-  - `MobileMenuIcon`
-  - `MobileSearchBar`
-  - `SearchBar`
-- Created the Footer component.
-- Integrated Header and Footer components into `App.jsx`.
-- Organized Header components into separate files for better maintainability.
+- Configured the `@components` import alias.
+- Created reusable Header components.
+- Created Footer component.
+- Integrated Header and Footer into `App.jsx`.
+- Organized components into separate files.
 
 ### Step 4 — Completed: Mega Menu
 
 - Created reusable Mega Menu components.
 - Added category navigation for Men, Women, Kids, Shoes, Watches, Accessories, Collections, and Sale.
-- Created `CategoryImageBox.jsx` for promotional category images.
-- Created `LinkItem.jsx` for reusable navigation links.
-- Created `MegaMenuItem.jsx` for Mega Menu items.
+- Created `CategoryImageBox.jsx`.
+- Created `LinkItem.jsx`.
+- Created `MegaMenuItem.jsx`.
 - Added category-specific promotional images.
-- Improved Mega Menu layout and styling using Tailwind CSS.
-- Organized Mega Menu components into a dedicated directory.
-- Updated navigation styling for a consistent user interface.
+- Improved Mega Menu layout using Tailwind CSS.
 
 ### Step 5 — Completed: Home Page & Product Cards
 
-- Created the Home page in `src/screens/Home/index.jsx`.
-- Created a reusable `ProductCard` component.
-- Created `CardImage.jsx` to display product images.
-- Created `Rating.jsx` for product ratings.
-- Added product information in `src/data/products.js`.
-- Added product images and category images to `public/images/`.
-- Organized product components, data, and screens into separate directories.
-- Updated `App.jsx` for the application structure.
-- Updated project configuration and dependencies as required.
+- Created Home page.
+- Created reusable ProductCard component.
+- Created `CardImage.jsx`.
+- Created `Rating.jsx`.
+- Added product information in separate data files.
+- Added product and category images.
+- Organized product components, data, and screens.
 
 ### Step 6 — Completed: React Router Integration
 
 - Updated React Router dependency.
 - Configured application routing in `App.jsx`.
 - Implemented client-side navigation.
-- Created a custom 404 Error Page.
-- Added Error screen components in `src/screens/Error/`.
-- Created reusable Layout components in `src/components/Layout/`.
-- Updated Header navigation components for routing integration.
+- Created custom 404 Error Page.
+- Created reusable Layout components.
+- Updated Header navigation components.
 - Updated ProductCard navigation.
-- Improved application navigation and route handling.
 
 ### Step 7 — Completed: Product Details Page
 
-- Created a Product Details screen.
-- Implemented product details page navigation.
+- Created Product Details screen.
+- Implemented product details navigation.
 - Added product information display.
 - Added product quantity selector.
-- Implemented quantity increment (+) functionality.
-- Implemented quantity decrement (-) functionality.
-- Improved Product Details page UI using Tailwind CSS.
-- Organized Product Details screen components for better maintainability.
+- Implemented quantity increment functionality.
+- Implemented quantity decrement functionality.
+- Improved Product Details UI using Tailwind CSS.
 
 ### Step 8 — Completed: Backend Setup
 
@@ -238,67 +257,77 @@ mystore/
 - Installed Express.js.
 - Created the `server` directory.
 - Created `server/main.js` as the backend entry point.
-- Created `server/data` directory.
-- Moved product data from frontend to `server/data/products.js`.
+- Created backend data directory.
 - Started separating frontend and backend responsibilities.
-- Organized the initial backend project structure.
+- Organized initial backend project structure.
 
 ### Step 12 — Completed: Axios Integration & Frontend-Backend Connection
 
-- Installed Axios in the client for making HTTP requests.
-- Configured proxy settings in `vite.config.js` to connect the frontend with the backend.
+- Installed Axios in the client.
+- Configured proxy settings in `vite.config.js`.
 - Updated frontend screens to fetch product data from backend API endpoints.
 - Integrated frontend components with backend APIs.
-- Implemented dynamic data fetching instead of using static product data.
-- Improved communication between the React frontend and Express backend.
+- Implemented dynamic data fetching instead of static product data.
+- Improved communication between React frontend and Express backend.
 
 ### Step 14 — Completed: Configure Absolute Path Imports
 
-- Installed `@babel/preset-env` as a development dependency.
+- Installed `@babel/preset-env`.
 - Created `.babelrc` configuration file.
-- Added `jsconfig.json` to configure absolute path support.
-- Added the `imports` property in `package.json`.
-- Updated import statements in the main application file.
+- Added `jsconfig.json` for absolute path support.
+- Added `imports` property in `package.json`.
+- Updated import statements.
 - Improved project structure and simplified module imports.
 
 ### Step 15 — Completed: Backend Configuration & Mongoose Models
 
 - Updated backend project configuration.
-- Renamed `db.js` to `db.config.js` for database configuration.
-- Renamed `products.js` to `products.data.js` for better file organization.
-- Created a dedicated `models` directory inside the server folder.
-- Created `order.model.js` for managing order data.
-- Created `product.model.js` for managing product data.
-- Created `user.model.js` for managing user data.
-- Updated `server/main.js` to support the new backend structure.
+- Renamed database configuration file to `db.config.js`.
+- Renamed `products.js` to `products.data.js`.
+- Created a dedicated `models` directory.
+- Created `order.model.js`.
+- Created `product.model.js`.
+- Created `user.model.js`.
+- Updated `server/main.js`.
 - Updated `jsconfig.json` and `package.json`.
-- Improved backend code organization and maintainability.
 
-### Step 16 - Logging
+### Step 16 — Completed: Logging
 
 - Integrated Morgan middleware for HTTP request logging.
 - Configured request logging to monitor incoming HTTP requests.
 - Improved backend debugging and request tracking.
 
-### Step 17 Backend Updates
+### Step 17 — Completed: Backend Updates
 
 - Installed bcryptjs for password hashing.
-- Removed hardcoded IDs from product objects in products.js.
-- Added dummy user data in users.js for development and testing.
+- Removed hardcoded IDs from product objects.
+- Added dummy user data for development and testing.
 
-### Step 18: Database Seeder and Configuration Updates
+### Step 18 — Completed: Database Seeder and Configuration Updates
 
 - Created a database seeder file to populate MongoDB with dummy data.
 - Installed the `colors` package for colored console output.
-- Tested database seeding with the local MongoDB database.
+- Tested database seeding with local MongoDB.
 - Updated scripts in `package.json`.
-- Added the models folder to `jsconfig.json` and configured package imports.
+- Added models folder to `jsconfig.json`.
+- Configured package imports.
 - Renamed `products.js` to `products.data.js`.
 - Renamed `users.js` to `users.data.js`.
+
+### Step 21 — Completed: Express Error Handling Middleware
+
+- Created centralized Express error-handling middleware.
+- Updated `server/main.js` to use the error handler.
+- Modified `product.route.js` to throw errors.
+- Added the middlewares folder path to `jsconfig.json`.
+- Updated `package.json` import configuration.
+- Improved backend error handling and maintainability.
 
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
+
+Make sure you have installed:
 
 - Node.js
 - npm
@@ -309,26 +338,35 @@ mystore/
 
 ```bash
 git clone https://github.com/shubham-es6/mystore.git
+
 cd mystore
 ```
 
 ### Backend Setup
 
+From the root directory:
+
 ```bash
 npm install
 ```
 
-Configure your MongoDB connection string in your environment configuration before starting the backend.
+Configure your MongoDB connection string in the backend environment configuration.
+
+Start the backend using the configured npm script in the root `package.json`.
 
 ### Frontend Setup
 
+Open a new terminal:
+
 ```bash
 cd client
+
 npm install
+
 npm run dev
 ```
 
-Open the local URL shown in your terminal to view the application.
+Open the local URL displayed in your terminal to view the application.
 
 ## 📌 Project Status
 
@@ -356,6 +394,9 @@ MYStore is under active development.
 - Mongoose User Model
 - Mongoose Product Model
 - Mongoose Order Model
+- Database Seeder
+- Morgan HTTP Request Logging
+- Centralized Express Error Handling Middleware
 
 ### Upcoming Features
 
@@ -367,7 +408,6 @@ MYStore is under active development.
 - User Authentication
 - Product Search
 - Product Filtering and Sorting
-- MongoDB Database Connection and Integration
 - Checkout Page
 - Payment Gateway Integration
 - Order Management

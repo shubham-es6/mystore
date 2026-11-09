@@ -25,7 +25,9 @@
   "imports": {
     "#config/*": "./server/config/*",
     "#data/*": "./server/data/*",
-    "#models/*": "./server/models/*"
+    "#models/*": "./server/models/*",
+    "#routes/*": "./server/routes/*",
+    "#middlewares/*": "./server/middlewares/*"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

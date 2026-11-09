@@ -3,7 +3,9 @@ import express from "express";
 import colors from "colors";
 
 import connectDB from "#config/db.config.js";
-import products from "#data/products.data.js";
+import productRoutes from "#routes/product.route.js";
+import { errorHandler } from "#middlewares/error.middleware.js";
+
 import morgan from "morgan";
 
 dotenv.config();
@@ -20,14 +22,9 @@ app.get("/", (req, res) => {
   res.send("Api is running....");
 });
 
-app.get("/api/v1/products", (req, res) => {
-  res.json(products);
-});
+app.use("/api/v1/products", productRoutes);
 
-app.get("/api/v1/products/:id", (req, res) => {
-  const product = products.find((prod) => prod._id === req.params.id);
-  res.json(product);
-});
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(

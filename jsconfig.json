@@ -5,7 +5,9 @@
     "paths": {
       "#data/*": ["data/*"],
       "#config/*": ["config/*"],
-      "#models/*": ["models/*"]
+      "#models/*": ["models/*"],
+      "#routes/*": ["routes/*"],
+      "#middlewares/*": ["middlewares/*"]
     }
   },
   "include": ["server/**/*"],
