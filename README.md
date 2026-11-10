@@ -1,6 +1,6 @@
 # MYStore 🛍️
 
-A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.js, Express.js, and MongoDB.
+A modern full-stack e-commerce web application built with React, Vite, Tailwind CSS, Node.js, Express.js, and MongoDB.
 
 ## 🚀 Tech Stack
 
@@ -11,6 +11,9 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Vite
 - Tailwind CSS
 - React Router
+- Redux Toolkit
+- React Redux
+- RTK Query
 - Axios
 - ESLint
 
@@ -69,6 +72,16 @@ A modern e-commerce web application built with React, Vite, Tailwind CSS, Node.j
 - Controller and route integration
 - Separated controller logic from route definitions
 
+### State Management & API Integration
+
+- Redux Toolkit integration
+- React Redux Provider configuration
+- Centralized Redux store
+- RTK Query API setup
+- `createApi` and `fetchBaseQuery` configuration
+- Product, Order, and User tag types
+- Centralized API base URL configuration
+
 ### UI & Configuration
 
 - Tailwind CSS styling
@@ -87,6 +100,18 @@ mystore/
 │   │   ├── favicon.svg
 │   │   ├── icons.svg
 │   │   └── images/
+│   │       ├── accessories-bags.jpg
+│   │       ├── accessories-category.jpg
+│   │       ├── accessories-sunglasses.jpg
+│   │       ├── collections-bestsellers.jpg
+│   │       ├── collections-category.jpg
+│   │       ├── collections-new-arrivals.jpg
+│   │       ├── kids-boys.jpg
+│   │       ├── kids-category.jpg
+│   │       ├── kids-girls.jpg
+│   │       ├── men-category.jpg
+│   │       ├── men-watches-category.jpg
+│   │       ├── mens-suit-category.jpg
 │   │       ├── product-1.jpg
 │   │       ├── product-2.jpg
 │   │       ├── product-3.jpg
@@ -97,29 +122,34 @@ mystore/
 │   │       ├── product-8.jpg
 │   │       ├── product-9.jpg
 │   │       ├── product-10.jpg
-│   │       └── category images
+│   │       ├── sale-category.jpg
+│   │       ├── shoes-category.jpg
+│   │       ├── shoes-sneakers.jpg
+│   │       ├── shoes-sports.jpg
+│   │       ├── watches-category.jpg
+│   │       ├── women-category.jpg
+│   │       ├── women-dresses-category.jpg
+│   │       └── women-handbags-category.jpg
 │   │
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Footer/
 │   │   │   │   └── index.jsx
-│   │   │   │
 │   │   │   ├── Header/
 │   │   │   │   ├── MegaMenu/
 │   │   │   │   │   ├── AccessoriesMenuDisplay.jsx
 │   │   │   │   │   ├── AllCategoriesMenuDisplay.jsx
 │   │   │   │   │   ├── CategoryImageBox.jsx
 │   │   │   │   │   ├── CollectionsMenuDisplay.jsx
-│   │   │   │   ├── KidsMenuDisplay.jsx
-│   │   │   │   ├── LinkItem.jsx
-│   │   │   │   ├── MegaMenuItem.jsx
-│   │   │   │   ├── MenMenuDisplay.jsx
-│   │   │   │   ├── SaleMenuDisplay.jsx
-│   │   │   │   ├── ShoesMenuDisplay.jsx
-│   │   │   │   ├── WatchesMenuDisplay.jsx
-│   │   │   │   ├── WomenMenuDisplay.jsx
-│   │   │   │   └── index.jsx
-│   │   │   │
+│   │   │   │   │   ├── KidsMenuDisplay.jsx
+│   │   │   │   │   ├── LinkItem.jsx
+│   │   │   │   │   ├── MegaMenuItem.jsx
+│   │   │   │   │   ├── MenMenuDisplay.jsx
+│   │   │   │   │   ├── SaleMenuDisplay.jsx
+│   │   │   │   │   ├── ShoesMenuDisplay.jsx
+│   │   │   │   │   ├── WatchesMenuDisplay.jsx
+│   │   │   │   │   ├── WomenMenuDisplay.jsx
+│   │   │   │   │   └── index.jsx
 │   │   │   ├── DesktopMenu.jsx
 │   │   │   ├── Logo.jsx
 │   │   │   ├── MenuItem.jsx
@@ -129,29 +159,31 @@ mystore/
 │   │   │   ├── MobileSearchBar.jsx
 │   │   │   ├── SearchBar.jsx
 │   │   │   └── index.jsx
-│   │   │
 │   │   ├── Layout/
 │   │   │   └── index.jsx
+│   │   ├── ProductCard/
+│   │   │   ├── CardImage.jsx
+│   │   │   ├── Rating.jsx
+│   │   │   └── index.jsx
 │   │   │
-│   │   └── ProductCard/
-│   │       ├── CardImage.jsx
-│   │       ├── Rating.jsx
-│   │       └── index.jsx
+│   │   ├── data/
+│   │   ├── screens/
+│   │   │   ├── Error/
+│   │   │   │   └── index.jsx
+│   │   │   ├── Home/
+│   │   │   │   └── index.jsx
+│   │   │   └── ProductDetails/
+│   │   │       ├── QuantitySelector.jsx
+│   │   │       └── index.jsx
+│   │   │
+│   │   ├── slices/
+│   │   │   └── apiSlice.js
+│   │   ├── App.jsx
+│   │   ├── constants.js
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   └── store.js
 │   │
-│   ├── data/
-│   ├── screens/
-│   │   ├── Error/
-│   │   │   └── index.jsx
-│   │   ├── Home/
-│   │   │   └── index.jsx
-│   │   └── ProductDetails/
-│   │       ├── QuantitySelector.jsx
-│   │       └── index.jsx
-│   │
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-│
 │   ├── eslint.config.js
 │   ├── index.html
 │   ├── jsconfig.json
@@ -161,25 +193,19 @@ mystore/
 ├── server/
 │   ├── config/
 │   │   └── db.config.js
-│   │
 │   ├── controllers/
 │   │   └── product.controller.js
-│   │
 │   ├── data/
 │   │   ├── products.data.js
 │   │   └── users.data.js
-│   │
 │   ├── middlewares/
 │   │   └── error.middleware.js
-│   │
 │   ├── models/
 │   │   ├── order.model.js
 │   │   ├── product.model.js
 │   │   └── user.model.js
-│   │
 │   ├── routes/
 │   │   └── product.route.js
-│   │
 │   ├── main.js
 │   └── seeder.js
 │
@@ -209,6 +235,10 @@ mystore/
 - Connected product controllers with product routes
 - Added controllers path alias in `jsconfig.json`
 - Updated `package.json` imports configuration
+- Installed Redux Toolkit and React Redux
+- Configured Redux store and Provider
+- Created RTK Query API slice
+- Added slices path alias in `jsconfig.json`
 
 ## 🔄 Recent Changes
 
@@ -341,7 +371,21 @@ mystore/
 - Added controllers folder path to `jsconfig.json`.
 - Updated `package.json` imports configuration.
 - Separated controller logic from route definitions.
-- Improved backend code organization and maintainability.
+- Improved project code organization and maintainability.
+
+### Step 23 — Completed: Redux Toolkit & RTK Query Setup
+
+- Installed Redux Toolkit (`@reduxjs/toolkit`).
+- Installed React Redux (`react-redux`).
+- Created `store.js` to configure the Redux store.
+- Created `slices/apiSlice.js` using RTK Query.
+- Configured `createApi` and `fetchBaseQuery`.
+- Added Product, Order, and User tag types.
+- Created `constants.js` for the API base URL.
+- Integrated Redux Provider into the React application.
+- Added `@slices/*` alias to `jsconfig.json`.
+- Updated frontend dependencies in `package.json`.
+- Prepared the application for centralized API state management.
 
 ## 🛠️ Installation and Setup
 
@@ -367,12 +411,14 @@ cd mystore
 From the root directory:
 
 ```bash
+cd server
+
 npm install
 ```
 
 Configure your MongoDB connection string in the backend environment configuration.
 
-Start the backend using the configured npm script in the root `package.json`.
+Start the backend using the configured npm script in the backend `package.json`.
 
 ### Frontend Setup
 
@@ -420,10 +466,17 @@ MYStore is under active development.
 - Product Controller Setup
 - Controller and Route Integration
 - Controllers Path Alias Configuration
+- Redux Toolkit Installation
+- React Redux Integration
+- Redux Store Setup
+- RTK Query API Slice Setup
+- Redux Provider Integration
+- Slices Path Alias Configuration
 
 ### Upcoming Features
 
 - Complete Express Product API
+- Product API integration using RTK Query
 - Add to Cart functionality
 - Shopping Cart Page
 - Remove Products from Cart
@@ -439,4 +492,6 @@ More e-commerce features will be developed in upcoming steps.
 
 ---
 
-**Developed with ❤️ using React.js, Tailwind CSS, Node.js, Express.js, and MongoDB.**
+**Developed with ❤️ using React.js, Redux Toolkit, Tailwind CSS, Node.js, Express.js, and MongoDB.**
+
+**Developer:** Shubham Yadav
