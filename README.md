@@ -5,6 +5,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 ## 🚀 Tech Stack
 
 ### Frontend
+
 - React.js
 - JavaScript (ES6+)
 - Vite
@@ -17,6 +18,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - ESLint
 
 ### Backend
+
 - Node.js
 - Express.js
 - MongoDB
@@ -28,6 +30,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 ## ✨ Features
 
 ### Navigation & Layout
+
 - Home page for displaying products
 - Reusable Header and Footer components
 - Desktop and mobile navigation
@@ -36,6 +39,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Responsive navigation layout
 
 ### Product Features
+
 - Reusable ProductCard component
 - Product image component
 - Product rating component
@@ -47,6 +51,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Quantity decrement (-) functionality
 
 ### Routing & Application
+
 - React Router integration
 - Client-side navigation and routing
 - Product details navigation
@@ -54,6 +59,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Reusable Layout components
 
 ### Backend Features
+
 - Node.js and Express.js backend
 - MongoDB database configuration
 - Mongoose models for users, products, and orders
@@ -67,6 +73,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Separated controller logic from route definitions
 
 ### State Management & API Integration
+
 - Redux Toolkit integration
 - React Redux Provider configuration
 - Centralized Redux store
@@ -80,6 +87,7 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Error state handling on the Home screen
 
 ### UI & Configuration
+
 - Tailwind CSS styling
 - Custom favicon and SVG icons
 - Organized components, data, layouts, and screens
@@ -392,6 +400,14 @@ mystore/
 - Implemented loading state handling.
 - Implemented error state handling.
 - Improved product data fetching and API state management.
+
+### Step 25 — Completed: Product Details API Integration
+
+- Added a dedicated API endpoint to fetch individual product details.
+- Integrated the product details API with the Product Details screen.
+- Connected the Product Details screen to the Redux API slice.
+- Implemented dynamic product data fetching using RTK Query.
+- Improved product details data management.
 
 ## 🛠️ Installation and Setup
 
