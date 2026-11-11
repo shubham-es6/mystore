@@ -5,7 +5,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 ## 🚀 Tech Stack
 
 ### Frontend
-
 - React.js
 - JavaScript (ES6+)
 - Vite
@@ -18,7 +17,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - ESLint
 
 ### Backend
-
 - Node.js
 - Express.js
 - MongoDB
@@ -30,7 +28,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 ## ✨ Features
 
 ### Navigation & Layout
-
 - Home page for displaying products
 - Reusable Header and Footer components
 - Desktop and mobile navigation
@@ -39,7 +36,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Responsive navigation layout
 
 ### Product Features
-
 - Reusable ProductCard component
 - Product image component
 - Product rating component
@@ -51,7 +47,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Quantity decrement (-) functionality
 
 ### Routing & Application
-
 - React Router integration
 - Client-side navigation and routing
 - Product details navigation
@@ -59,7 +54,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Reusable Layout components
 
 ### Backend Features
-
 - Node.js and Express.js backend
 - MongoDB database configuration
 - Mongoose models for users, products, and orders
@@ -73,7 +67,6 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - Separated controller logic from route definitions
 
 ### State Management & API Integration
-
 - Redux Toolkit integration
 - React Redux Provider configuration
 - Centralized Redux store
@@ -81,9 +74,12 @@ A modern full-stack e-commerce web application built with React, Vite, Tailwind 
 - `createApi` and `fetchBaseQuery` configuration
 - Product, Order, and User tag types
 - Centralized API base URL configuration
+- Dedicated products API slice using RTK Query
+- Home screen product fetching through the products API slice
+- Loading state handling on the Home screen
+- Error state handling on the Home screen
 
 ### UI & Configuration
-
 - Tailwind CSS styling
 - Custom favicon and SVG icons
 - Organized components, data, layouts, and screens
@@ -141,15 +137,15 @@ mystore/
 │   │   │   │   │   ├── AllCategoriesMenuDisplay.jsx
 │   │   │   │   │   ├── CategoryImageBox.jsx
 │   │   │   │   │   ├── CollectionsMenuDisplay.jsx
-│   │   │   │   │   ├── KidsMenuDisplay.jsx
-│   │   │   │   │   ├── LinkItem.jsx
-│   │   │   │   │   ├── MegaMenuItem.jsx
-│   │   │   │   │   ├── MenMenuDisplay.jsx
-│   │   │   │   │   ├── SaleMenuDisplay.jsx
-│   │   │   │   │   ├── ShoesMenuDisplay.jsx
-│   │   │   │   │   ├── WatchesMenuDisplay.jsx
-│   │   │   │   │   ├── WomenMenuDisplay.jsx
-│   │   │   │   │   └── index.jsx
+│   │   │   │   ├── KidsMenuDisplay.jsx
+│   │   │   │   ├── LinkItem.jsx
+│   │   │   │   ├── MegaMenuItem.jsx
+│   │   │   │   ├── MenMenuDisplay.jsx
+│   │   │   │   ├── SaleMenuDisplay.jsx
+│   │   │   │   ├── ShoesMenuDisplay.jsx
+│   │   │   │   ├── WatchesMenuDisplay.jsx
+│   │   │   │   ├── WomenMenuDisplay.jsx
+│   │   │   │   └── index.jsx
 │   │   │   ├── DesktopMenu.jsx
 │   │   │   ├── Logo.jsx
 │   │   │   ├── MenuItem.jsx
@@ -165,7 +161,6 @@ mystore/
 │   │   │   ├── CardImage.jsx
 │   │   │   ├── Rating.jsx
 │   │   │   └── index.jsx
-│   │   │
 │   │   ├── data/
 │   │   ├── screens/
 │   │   │   ├── Error/
@@ -175,7 +170,6 @@ mystore/
 │   │   │   └── ProductDetails/
 │   │   │       ├── QuantitySelector.jsx
 │   │   │       └── index.jsx
-│   │   │
 │   │   ├── slices/
 │   │   │   └── apiSlice.js
 │   │   ├── App.jsx
@@ -239,6 +233,9 @@ mystore/
 - Configured Redux store and Provider
 - Created RTK Query API slice
 - Added slices path alias in `jsconfig.json`
+- Created products API slice
+- Integrated products API with the Home screen
+- Added loading and error state handling
 
 ## 🔄 Recent Changes
 
@@ -387,6 +384,15 @@ mystore/
 - Updated frontend dependencies in `package.json`.
 - Prepared the application for centralized API state management.
 
+### Step 24 — Completed: Products API Slice & Home Screen Integration
+
+- Added a dedicated products API Redux slice.
+- Integrated `productApiSlice` into the Home screen.
+- Updated the Home screen to fetch products using RTK Query.
+- Implemented loading state handling.
+- Implemented error state handling.
+- Improved product data fetching and API state management.
+
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
@@ -472,11 +478,13 @@ MYStore is under active development.
 - RTK Query API Slice Setup
 - Redux Provider Integration
 - Slices Path Alias Configuration
+- Products API Slice Integration
+- Home Screen Product API Integration
+- Home Screen Loading and Error State Handling
 
 ### Upcoming Features
 
 - Complete Express Product API
-- Product API integration using RTK Query
 - Add to Cart functionality
 - Shopping Cart Page
 - Remove Products from Cart
