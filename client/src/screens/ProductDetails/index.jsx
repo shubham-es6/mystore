@@ -5,6 +5,8 @@ import { useParams, Link } from "react-router";
 import Rating from "@components/ProductCard/Rating";
 import QuantitySelector from "./QuantitySelector";
 import { useGetProductDetailsQuery } from "@slices/productApiSlice";
+import Loader from "@components/Loader";
+import Alert from "@components/Alert";
 
 const ProductDetailsScreen = () => {
   const { id: productId } = useParams();
@@ -27,9 +29,11 @@ const ProductDetailsScreen = () => {
         </Link>
 
         {isLoading ? (
-          <p>Loading...</p>
+          <Loader />
         ) : isError ? (
-          <p>{error.data?.message || error.error}</p>
+          <Alert type="error">
+            {error?.data?.message || error?.error || "Something went wrong!"}
+          </Alert>
         ) : (
           <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
             {/* Image */}
