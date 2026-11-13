@@ -514,7 +514,6 @@ MYStore is under active development.
 
 More e-commerce features will be developed in upcoming steps.
 
----
 
 **Developed with ❤️ using React.js, Redux Toolkit, Tailwind CSS, Node.js, Express.js, and MongoDB.**
 
